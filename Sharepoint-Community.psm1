@@ -1306,7 +1306,7 @@ function Get-SpListItem{
     Begin {}
     Process{
 
-        if (!($Web)){
+        if ($Web){
             $ListItems = (Get-SPList -web $Web -ListName $ListName).items
         }else{
             $ListItems = (Get-SPList -Url $Url -ListName $ListName).items
